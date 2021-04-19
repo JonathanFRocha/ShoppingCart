@@ -109,13 +109,16 @@ const renderedBtnListener = async (e) => {
   sumCartItems();
 };
 
-function createProductItemElement({ sku, name, image }) {
+function createProductItemElement({ sku, name, image, price }) {
   const section = document.createElement("section");
+  const div = document.createElement("div");
+  div.className = "item__div";
   section.className = "item";
-
+  div.appendChild(createProductImageElement(image));
+  div.appendChild(createCustomElement("span", "item__price", price));
+  section.appendChild(div);
   section.appendChild(createCustomElement("span", "item__sku", sku));
   section.appendChild(createCustomElement("span", "item__title", name));
-  section.appendChild(createProductImageElement(image));
   const renderedItemButton = createCustomElement("button", "item__add", "Adicionar ao carrinho!");
   renderedItemButton.addEventListener("click", renderedBtnListener);
   section.appendChild(renderedItemButton);
@@ -130,11 +133,13 @@ const removeChildren = (parent) => {
 const renderResults = (items) => {
   const itemContainer = document.querySelector(".items");
   removeChildren(itemContainer);
-  items.forEach(({ id, title, thumbnail }) => {
+  items.forEach(({ id, title, thumbnail, price }) => {
+    const newPrice = Math.round((price * 100) / 100).toFixed(2);
     const params = {
       sku: id,
       name: title,
       image: thumbnail,
+      price: `R$: ${newPrice}`,
     };
     const element = createProductItemElement(params);
     itemContainer.appendChild(element);
@@ -220,10 +225,17 @@ const addEventListenerLis = () => {
   });
 };
 
+//                   Implementing a debounce for mercado Libre search API
+let timeout;
+let delay = 500;
+
 const addFiltrarEventListener = () => {
   const searchInput = document.querySelector("#filtrar");
   searchInput.addEventListener("keyup", (e) => {
-    console.log(e.target.value);
+    if (timeout) clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      getResults(e.target.value);
+    }, delay);
   });
 };
 
@@ -231,6 +243,7 @@ const loadbuttons = () => {
   loadEmptyCart();
   setMainBtnListener();
   addEventListenerLis();
+  addFiltrarEventListener();
 };
 
 window.onload = function onload() {

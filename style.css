@@ -8,14 +8,18 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-header {
-  display: block;
+header,
+.items {
   margin: auto;
   margin-top: 10px;
   padding: 20px;
   background-color: rgba(226, 213, 205, 1);
   box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.24);
   width: 90vw;
+}
+
+header {
+  display: block;
 }
 
 .header_firstContainer {
@@ -147,11 +151,9 @@ header {
   list-style: none;
   position: absolute;
   width: 100%;
-  transition: 0.2s;
 }
 .header_button_ul__invisible {
   display: none;
-  transition: 0.2s;
 }
 
 .header_button_ul :first-child {
@@ -168,48 +170,36 @@ header {
   cursor: pointer;
 }
 
-.top-bar {
-  align-items: center;
-  display: flex;
-  height: 100px;
-  justify-content: space-around;
-  margin-bottom: 10px;
-  width: 100%;
-}
-
-.top-bar .input-name-group {
-  align-items: flex-start;
-  display: flex;
-}
-
-.top-bar .input-terms-group {
-  align-items: flex-start;
-  display: flex;
-}
-
-.container {
-  margin-top: 20vh;
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-
 .items {
   display: flex;
-  flex-basis: 70%;
+  flex-basis: 100%;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .item {
-  border: 2px solid blue;
+  background: rgb(144, 140, 147);
+  background: radial-gradient(circle, antiquewhite 0%, rgba(226, 213, 220, 1) 100%);
   border-radius: 5px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   height: auto;
-  margin: 5px;
-  width: 200px;
+  margin: 40px 4em;
+  width: 14vw;
+  box-shadow: 3px 3px 5px 5px rgba(168, 168, 168, 0.64);
+}
+
+.item .item__div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.item .item__price {
+  font-size: 0.85em;
+  margin-right: 2px;
 }
 
 .item .item__sku {
@@ -223,7 +213,9 @@ header {
 }
 
 .item .item__image {
-  width: 100%;
+  width: 50%;
+  border-radius: 10%;
+  margin: 0.5em;
 }
 
 .item .item__add {
