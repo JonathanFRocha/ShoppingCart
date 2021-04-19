@@ -151,9 +151,12 @@ header {
   list-style: none;
   position: absolute;
   width: 100%;
+  transition: all 0.2s ease;
+  z-index: 1;
 }
 .header_button_ul__invisible {
   display: none;
+  transition: all 0.2s ease;
 }
 
 .header_button_ul :first-child {
@@ -187,7 +190,10 @@ header {
   height: auto;
   margin: 40px 4em;
   width: 14vw;
+  opacity: 0;
+  animation: cssAnimOpacity 1s forwards;
   box-shadow: 3px 3px 5px 5px rgba(168, 168, 168, 0.64);
+  z-index: 0;
 }
 
 .item .item__div {
@@ -219,11 +225,19 @@ header {
 }
 
 .item .item__add {
-  background-color: green;
+  background-color: whitesmoke;
+  width: 50%;
+  outline: none;
   border: 0;
+  border-radius: 25px;
   cursor: pointer;
-  margin: 0;
+  margin: 0 auto 20px;
   padding: 5px;
+  box-shadow: 1px 1px 3px 3px rgba(168, 168, 168, 0.64);
+}
+
+.item__add__opacity {
+  opacity: 1;
 }
 
 .cart {
@@ -236,4 +250,22 @@ header {
   flex-basis: 1;
   font-size: 16pt;
   text-align: center;
+}
+
+@keyframes cssAnimOpacity {
+  20% {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  75% {
+    opacity: 0.8;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

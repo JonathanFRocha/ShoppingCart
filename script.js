@@ -109,11 +109,12 @@ const renderedBtnListener = async (e) => {
   sumCartItems();
 };
 
-function createProductItemElement({ sku, name, image, price }) {
+function createProductItemElement({ sku, name, image, price, time }) {
   const section = document.createElement("section");
   const div = document.createElement("div");
   div.className = "item__div";
   section.className = "item";
+  if (time) section.style.animationDelay = time;
   div.appendChild(createProductImageElement(image));
   div.appendChild(createCustomElement("span", "item__price", price));
   section.appendChild(div);
@@ -133,6 +134,7 @@ const removeChildren = (parent) => {
 const renderResults = (items) => {
   const itemContainer = document.querySelector(".items");
   removeChildren(itemContainer);
+  let animTime = 0.6;
   items.forEach(({ id, title, thumbnail, price }) => {
     const newPrice = Math.round((price * 100) / 100).toFixed(2);
     const params = {
@@ -140,7 +142,9 @@ const renderResults = (items) => {
       name: title,
       image: thumbnail,
       price: `R$: ${newPrice}`,
+      time: `${animTime}s`,
     };
+    animTime += 0.1;
     const element = createProductItemElement(params);
     itemContainer.appendChild(element);
   });
