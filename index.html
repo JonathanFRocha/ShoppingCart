@@ -4,27 +4,95 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Lets Buy</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
   </head>
-  <header>
-    <div>
-      <div>
-        <img width="120" src="./img/Mylogo.png" alt="logo" />
-        <input id="" placeholder="text" type="text" />
-      <img width="50" src="./img/shopping-cart-icon.svg" alt="Cart" />
-    </div>
-  </header>
   <body>
-    <section class="container">
-      <section class="items"></section>
-      <section class="cart">
-        <span class="cart__title">Carrinho de compras</span>
-        <button class="empty-cart">Esvaziar carrinho</button>
-        <p class="total-price"></p>
-        <ol class="cart__items"></ol>
+    <header>
+      <div class="header_firstContainer">
+        <div class="header_logo_input__container">
+          <div class="header_logo__container">
+            <img class="header_logo" width="120" src="./img/Mylogo.png" alt="logo" />
+            <p>Let's Buy</p>
+          </div>
+          <div class="header_filtrar__container">
+            <input placeholder="." class="header_filtrar" name="filtrar" id="filtrar" type="text" />
+            <label class="header_filtrar__label" for="filtrar">Pesquisar Produtos</label>
+          </div>
+        </div>
+
+        <img class="header_cart" width="50" src="./img/shopping-cart-icon.svg" alt="Cart" />
+      </div>
+      <div class="header_button">
+        <div class="header_button__container">
+          <button class="header_button__main">ELETRODOMÉSTICOS</button>
+          <ul class="header_button_ul header_button_ul__invisible">
+            <li class="header_button_li">Geladeira</li>
+            <li class="header_button_li">Fogão</li>
+            <li class="header_button_li">Máquina de lavar roupa</li>
+            <li class="header_button_li">Cooktop</li>
+          </ul>
+        </div>
+        <div class="header_button__container">
+          <button class="header_button__main">SMARTPHONES</button>
+          <ul class="header_button_ul header_button_ul__invisible">
+            <li class="header_button_li">Asus</li>
+            <li class="header_button_li">Apple</li>
+            <li class="header_button_li">Samsung</li>
+            <li class="header_button_li">XiaoMI</li>
+            <li class="header_button_li">Motorola</li>
+          </ul>
+        </div>
+        <div class="header_button__container">
+          <button class="header_button__main">INFORMATICA</button>
+          <ul class="header_button_ul header_button_ul__invisible">
+            <li class="header_button_li">Computador</li>
+            <li class="header_button_li">Notebook</li>
+            <li class="header_button_li">Processadores</li>
+            <li class="header_button_li">Monitores</li>
+            <li class="header_button_li">Placa de Video</li>
+          </ul>
+        </div>
+        <div class="header_button__container">
+          <button class="header_button__main">BRINQUEDOS</button>
+          <ul class="header_button_ul header_button_ul__invisible">
+            <li class="header_button_li">Bonecas</li>
+            <li class="header_button_li">Bonecos</li>
+            <li class="header_button_li">Carrinhos</li>
+            <li class="header_button_li">Playground</li>
+          </ul>
+        </div>
+        <div class="header_button__container">
+          <button class="header_button__main">TELEVISÃO</button>
+          <ul class="header_button_ul header_button_ul__invisible">
+            <li class="header_button_li">TV 4K</li>
+            <li class="header_button_li">TV Oled</li>
+            <li class="header_button_li">TV Qled</li>
+            <li class="header_button_li">TV Crystal</li>
+            <li class="header_button_li">TV NanoCell</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="container">
+        <section class="items"></section>
+        <section class="cart">
+          <span class="cart__title">Carrinho de compras</span>
+          <button class="empty-cart">Esvaziar carrinho</button>
+          <p class="total-price"></p>
+          <ol class="cart__items"></ol>
+        </section>
       </section>
-    </section>
+    </main>
   </body>
 </html>
