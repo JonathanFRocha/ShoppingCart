@@ -238,6 +238,7 @@ const addFiltrarEventListener = () => {
   searchInput.addEventListener("keyup", (e) => {
     if (timeout) clearTimeout(timeout);
     timeout = setTimeout(() => {
+      console.log(e.target.value);
       getResults(e.target.value);
     }, delay);
   });
@@ -251,7 +252,6 @@ const loadbuttons = () => {
 };
 
 window.onload = function onload() {
-  getResults();
   loadCartFromStorage();
   loadbuttons();
 };

@@ -241,7 +241,7 @@ header {
 }
 
 .cart {
-  display: flex;
+  display: none;
   flex-basis: 30%;
   flex-flow: column wrap;
 }
