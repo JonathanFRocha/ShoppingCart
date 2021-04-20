@@ -203,6 +203,7 @@ header {
   flex-basis: 100%;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 3em;
 }
 
 .item {
@@ -353,7 +354,13 @@ header {
   width: 2em;
   float: right;
   margin: 1em 1em 0 0;
+  transition: 0.3s;
 }
+.cart__close:hover,
+.cart__delete:hover {
+  transform: scale(1.1);
+}
+
 .cart__titleprice__container {
   display: flex;
   height: 6vh;
@@ -395,7 +402,7 @@ header {
   padding: 15px;
   align-items: center;
   justify-content: space-between;
-  margin: 20px auto;
+  margin: 2em auto;
   width: 95%;
   box-shadow: 3px 3px 5px 5px rgba(0, 0, 0, 0.24);
 }
@@ -419,6 +426,84 @@ header {
 
 .cart__delete {
   width: 40px;
+  transition: 0.3s;
+}
+
+.container_waiting {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #00ab66;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: 0;
+  opacity: 0;
+  z-index: -4;
+  transition: all 0.6s;
+}
+
+.container_success {
+  transition: all 0.6s;
+  visibility: visible;
+  opacity: 1;
+  z-index: 5;
+}
+
+.container_message {
+  text-align: center;
+  font-size: 3em;
+  color: white;
+  transition: all 0.5s;
+}
+.cart__buy__div {
+  display: flex;
+  justify-content: center;
+}
+.cart__buy {
+  display: inline-block;
+  border-radius: 10px;
+  background-color: #00ab66;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1em;
+  padding: 1.1em;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.cart__buy span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.cart__buy span:after {
+  content: "Sim?";
+  font-size: 1em;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -30px;
+  transition: 0.5s;
+}
+
+.cart__buy:hover span {
+  padding-right: 40px;
+}
+
+.cart__buy:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.cart__buy:active {
+  background-color: green;
 }
 
 @keyframes cssAnimTransla {
@@ -456,3 +541,135 @@ header {
     opacity: 1;
   }
 }
+
+@media screen and (max-width: 1460px) {
+  .header_filtrar:placeholder-shown + .header_filtrar__label {
+    font-size: 0.9em;
+  }
+  .cart__titleprice__container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .total-price {
+    margin: 10px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .cart__title {
+    font-size: 1.1em;
+    text-align: center;
+  }
+  .total-price,
+  .cart__item__name,
+  .cart__item__price {
+    font-size: 0.9em;
+  }
+  .empty-cart {
+    font-size: 0.7em;
+  }
+  .cart__close {
+    width: 1.5em;
+  }
+  .item {
+    width: 16vw;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .header_logo__container img {
+    width: 85px;
+  }
+  .header_logo__container p {
+    font-size: 1.2em;
+  }
+  .header_logo_input__container {
+    width: 70%;
+    justify-content: space-evenly;
+  }
+  .header_button__main,
+  .header_button_li {
+    font-size: 0.72em;
+  }
+  .item {
+    width: 24vw;
+  }
+  .empty-cart {
+    float: left;
+  }
+  .cart__titleprice__container {
+    margin-top: 20%;
+  }
+  .cart__item {
+    flex-direction: column;
+  }
+  .cart__div {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .cart__delete {
+    position: absolute;
+    width: 2em;
+    right: 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .header_button__main,
+  .header_button_li {
+    letter-spacing: 0.5pt;
+    font-size: 0.55em;
+  }
+  .item {
+    width: 35vw;
+  }
+  .cart {
+    min-width: 60vw;
+  }
+}
+
+@media screen and (max-width: 570px) {
+  .header_button__main {
+    display: none;
+  }
+  .cart {
+    min-width: 80vw;
+  }
+  .cart__titleprice__container {
+    margin: 0;
+    display: inline-block;
+  }
+
+  .cart__title {
+    margin-top: 20px;
+    font-size: 0.9em;
+  }
+  .total-price,
+  .cart__item__name,
+  .cart__item__price {
+    font-size: 0.8em;
+  }
+  .item {
+    width: 60%;
+  }
+
+  .container_message {
+    font-size: 1.5em;
+  }
+}
+
+/* .cart__titleprice__container {
+  display: flex;
+  height: 6vh;
+  justify-content: flex-start;
+  align-items: center;
+}
+.cart__title {
+  margin-right: 20px;
+  flex-basis: 1;
+  font-size: 16pt;
+  text-align: left;
+} */
