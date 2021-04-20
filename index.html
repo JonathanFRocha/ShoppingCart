@@ -29,8 +29,10 @@
             <label class="header_filtrar__label" for="filtrar">Pesquisar Produtos</label>
           </div>
         </div>
-
-        <img class="header_cart" width="50" src="./img/shopping-cart-icon.svg" alt="Cart" />
+        <div class="header_cart__container">
+          <div class="header_cart__itemAmount"></div>
+          <img class="header_cart" width="50" src="./img/shopping-cart-icon.svg" alt="see cart" />
+        </div>
       </div>
       <div class="header_button">
         <div class="header_button__container">
@@ -84,13 +86,21 @@
       </div>
     </header>
     <main>
-      <section class="items"></section>
+      <div class="items_page_btn"></div>
+      <section class="items">
+        <h3>Faça Uma Busca</h3>
+      </section>
     </main>
-    <section class="cart">
-      <span class="cart__title">Carrinho de compras</span>
-      <button class="empty-cart">Esvaziar carrinho</button>
-      <p class="total-price"></p>
-      <ol class="cart__items"></ol>
-    </section>
+    <div class="cart-bg">
+      <section class="cart">
+        <img class="cart__close" src="./img/close.svg" alt="close modal" />
+        <button class="empty-cart">Esvaziar carrinho</button>
+        <div class="cart__titleprice__container">
+          <h2 class="cart__title">Meu Carrinho de Compras</h2>
+          <p class="total-price"></p>
+        </div>
+        <ol class="cart__items"></ol>
+      </section>
+    </div>
   </body>
 </html>
